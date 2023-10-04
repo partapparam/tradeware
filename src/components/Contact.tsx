@@ -21,7 +21,7 @@ const Contact = () => {
           className="btn-secondary px-10 rounded-full hover:bg-yellow-600 duration-300 transition-all hover:shadow-lg text-xl"
           onClick={openModal}
         >
-          Contact Us Now
+          Contact Us
         </button>
       </div>
       <Transition appear show={isOpen} as={Fragment}>
