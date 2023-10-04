@@ -11,9 +11,10 @@ const Banner = () => {
           Trade expertise meets approachability. Tradeware’s in-house team of
           software specialists is the go-to for quality. And with a
           client-focused approach and years in the trades, we’re more than just
-          your agency—we’re your partners.
+          your agency—we’re your partners. We know firsthand your software
+          investment is a big one, and we'd like to help.
         </p>
-        <button className="bg-orange-700 font-serif text-2xl font-thin p-10   md:basis-1/3">
+        <button className="bg-orange-600 font-serif text-2xl font-thin p-10   md:basis-1/3">
           About Us
         </button>
       </div>

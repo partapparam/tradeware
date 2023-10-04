@@ -2,6 +2,7 @@ import { useState } from "react"
 import NavigationBar from "./components/NavigationBar"
 import "./App.css"
 import Banner from "./components/Banner"
+import Services from "./components/Services"
 
 const App = () => {
   const [count, setCount] = useState(0)
@@ -14,6 +15,7 @@ const App = () => {
       <div>
         <Banner />
       </div>
+      <Services />
     </div>
   )
 }
