@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from "react"
+import { useState, Fragment } from "react"
 import { Disclosure, Transition, Dialog } from "@headlessui/react"
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline"
 import { ContactForm } from "./ContactForm"
@@ -14,7 +14,7 @@ const NavigationBar = () => {
   }
 
   return (
-    <Disclosure as="nav" className="relative z-50">
+    <Disclosure as="nav" className="relative z-30">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-8xl py-4 border-b-2">
