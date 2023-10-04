@@ -1,7 +1,7 @@
-import React from "react"
 import { useForm } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
 import * as Yup from "yup"
+import postForm from "../formService"
 
 interface ContactFormProps {
   closeModal: () => void
@@ -10,8 +10,9 @@ interface ContactFormProps {
 type ContactFormValues = {
   fullname: string
   email: string
-  phone: string
+  phone?: string | undefined
   company: string
+  message: string
 }
 
 const PHONE_REG_EXP =
@@ -23,6 +24,9 @@ export const ContactForm = ({ closeModal }: ContactFormProps) => {
     email: Yup.string().required("Email is required").email("Email is invalid"),
     company: Yup.string().required("Company is required"),
     phone: Yup.string().matches(PHONE_REG_EXP, "Phone number is not valid"),
+    message: Yup.string().required(
+      "Please provide some information about what you are looking for"
+    ),
   })
   const {
     register,
@@ -35,6 +39,7 @@ export const ContactForm = ({ closeModal }: ContactFormProps) => {
 
   const onSubmit = (data: ContactFormValues) => {
     console.log(JSON.stringify(data, null, 2))
+    postForm(data)
     handleReset()
   }
   const handleReset = () => {
@@ -45,7 +50,7 @@ export const ContactForm = ({ closeModal }: ContactFormProps) => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="text-black flex flex-col gap-y-4"
+      className="text-black flex flex-col gap-y-4 z-50"
     >
       <div className="text-black">
         <label>Full Name</label>
@@ -83,6 +88,20 @@ export const ContactForm = ({ closeModal }: ContactFormProps) => {
           className={`${errors.company ? "is-invalid" : ""}`}
         />
         <div className="invalid-feedback">{errors.company?.message}</div>
+      </div>
+      <div className="">
+        <label>How can we help you?</label>
+        <textarea
+          maxLength={300}
+          // name="review"
+          {...register("message")}
+          rows={6}
+          cols={30}
+          className={`bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  focus:border-blue-500 block w-full p-2.5 ${
+            errors.company ? "is-invalid" : ""
+          }`}
+        />
+        <div className="invalid-feedback">{errors.message?.message}</div>
       </div>
       <div className="flex flex-row gap-4">
         <button

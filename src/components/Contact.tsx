@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react"
+import { Fragment, useState } from "react"
 import { Transition, Dialog } from "@headlessui/react"
 import { ContactForm } from "./ContactForm"
 
@@ -25,7 +25,7 @@ const Contact = () => {
         </button>
       </div>
       <Transition appear show={isOpen} as={Fragment}>
-        <Dialog as="div" className="relative z-10" onClose={closeModal}>
+        <Dialog as="div" className="relative z-50" onClose={closeModal}>
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
