@@ -1,6 +1,7 @@
-import React, { useState } from "react"
-import { Disclosure, Transition } from "@headlessui/react"
+import React, { useState, Fragment } from "react"
+import { Disclosure, Transition, Dialog } from "@headlessui/react"
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline"
+import { ContactForm } from "./ContactForm"
 
 const NavigationBar = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -29,9 +30,9 @@ const NavigationBar = () => {
                   <p>Insights</p>
                   <p
                     onClick={openModal}
-                    className="text-blue-500 rounded-full hover:bg-blue-200 transition duration-300 bg-white px-4 py-2"
+                    className="px-5 py-2 rounded-full hover:bg-yellow-600 duration-300 transition-all bg-white border-2 border-white text-blue-800 hover:text-white"
                   >
-                    Need Help?
+                    Contact Us
                   </p>
                 </div>
               </div>
@@ -56,19 +57,57 @@ const NavigationBar = () => {
             leaveFrom="transform opacity-100"
             leaveTo="transform opacity-0"
           >
-            <Disclosure.Panel className="md:hidden z-50 absolute w-full shadow-lg text-right bg-blue-800 p-5">
+            <Disclosure.Panel className="md:hidden z-50 absolute w-full shadow-lg text-center bg-blue-800 p-5">
               <div>
                 <Disclosure.Button>
                   <p>Services</p>
                   <p>Projects</p>
                   <p>Partners</p>
                   <p>Insights</p>
-                  <p className="text-blue-500 rounded-full hover:bg-blue-200 transition duration-300 bg-white px-4 py-2">
-                    Need help?
+                  <p
+                    onClick={openModal}
+                    className="px-8 py-2 rounded-full hover:bg-yellow-600 duration-300 transition-all bg-white border-2 border-white text-blue-800 hover:text-white"
+                  >
+                    Contact Us
                   </p>
                 </Disclosure.Button>
               </div>
             </Disclosure.Panel>
+          </Transition>
+          <Transition appear show={isOpen} as={Fragment}>
+            <Dialog as="div" className="relative z-10" onClose={closeModal}>
+              <Transition.Child
+                as={Fragment}
+                enter="ease-out duration-300"
+                enterFrom="opacity-0"
+                enterTo="opacity-100"
+                leave="ease-in duration-200"
+                leaveFrom="opacity-100"
+                leaveTo="opacity-0"
+              >
+                <div className="fixed inset-0 bg-black bg-opacity-25" />
+              </Transition.Child>
+              <div className="fixed inset-0 overflow-y-auto">
+                <div className="flex min-h-full items-center justify-center p-4 text-center">
+                  <Transition.Child
+                    as={Fragment}
+                    enter="ease-out duration-300"
+                    enterFrom="opacity-0 scale-95"
+                    enterTo="opacity-100 scale-100"
+                    leave="ease-in duration-200"
+                    leaveFrom="opacity-100 scale-100"
+                    leaveTo="opacity-0 scale-95"
+                  >
+                    <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                      <Dialog.Title className="text-3xl font-extrabold py-5 text-gray-900">
+                        Contact Us
+                      </Dialog.Title>
+                      <ContactForm closeModal={closeModal} />
+                    </Dialog.Panel>
+                  </Transition.Child>
+                </div>
+              </div>
+            </Dialog>
           </Transition>
         </>
       )}

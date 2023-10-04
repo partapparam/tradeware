@@ -2,7 +2,7 @@ const Banner = () => {
   return (
     <div className="flex flex-col justify-center">
       <div className="border-b-2">
-        <p className="text-6xl font-extrabold sm:text-9xl py-24 px-10 font-serif border-white">
+        <p className="text-5xl font-extrabold sm:text-9xl py-24 px-10 font-serif border-white">
           We Can Help With That
         </p>
       </div>
@@ -14,7 +14,7 @@ const Banner = () => {
           your agency—we’re your partners. We know firsthand your software
           investment is a big one, and we'd like to help.
         </p>
-        <button className="bg-orange-600 font-serif text-2xl font-thin p-10   md:basis-1/3">
+        <button className="bg-yellow-500 font-serif text-2xl font-thin p-10   md:basis-1/3">
           About Us
         </button>
       </div>
