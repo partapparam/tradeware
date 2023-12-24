@@ -28,7 +28,7 @@ const postForm = async (data: NewContactData) => {
   }
   try {
     const response = await fetch(URL, requestOptions)
-    console.log(response)
+    return response
   } catch (error) {
     console.log(error)
   }
