@@ -54,8 +54,10 @@ export const ContactForm = ({ closeModal }: ContactFormProps) => {
       } else {
         throw Error("There was an error, please submit again")
       }
-    } catch (err: any) {
-      alert(err.message)
+    } catch (err: unknown) {
+      if (err instanceof Error) {
+        alert(err.message)
+      }
     } finally {
       reset()
     }
