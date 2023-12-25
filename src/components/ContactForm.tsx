@@ -35,13 +35,32 @@ export const ContactForm = ({ closeModal }: ContactFormProps) => {
     formState: { errors },
   } = useForm<ContactFormValues>({
     resolver: yupResolver(validationSchema),
+    defaultValues: {
+      fullname: "",
+      email: "",
+      company: "",
+      phone: "",
+      message: "",
+    },
   })
 
-  const onSubmit = (data: ContactFormValues) => {
+  const onSubmit = async (data: ContactFormValues) => {
     console.log(JSON.stringify(data, null, 2))
-    postForm(data)
-    handleReset()
+    try {
+      const status: number = await postForm(data)
+      if (status === 200) {
+        alert("Thank you, we will be in touch shortly")
+        closeModal()
+      } else {
+        throw Error("There was an error, please submit again")
+      }
+    } catch (err: any) {
+      alert(err.message)
+    } finally {
+      reset()
+    }
   }
+
   const handleReset = () => {
     reset()
     closeModal()

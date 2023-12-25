@@ -14,7 +14,7 @@ const NavigationBar = () => {
   }
 
   return (
-    <Disclosure as="nav" className="relative z-30">
+    <Disclosure as="nav" className="relative z-10">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-8xl py-4 border-b-2">
@@ -30,7 +30,7 @@ const NavigationBar = () => {
                   <p>Insights</p>
                   <p
                     onClick={openModal}
-                    className="px-5 py-2 rounded-full hover:bg-yellow-600 duration-300 transition-all bg-white border-2 border-white text-blue-800 hover:text-white"
+                    className="px-5 py-2 rounded-full hover:bg-yellow-500 duration-300 transition-all bg-white border-2 border-white text-blue-800 hover:text-white"
                   >
                     Contact Us
                   </p>
@@ -38,7 +38,7 @@ const NavigationBar = () => {
               </div>
               <div className="inset-y-0 flex items-center md:hidden">
                 {/* Mobile menu button*/}
-                <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-white hover:bg-yellow-600 transition duration-300">
+                <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-white hover:bg-yellow-500 transition duration-300">
                   <span className="sr-only">Open main menu</span>
                   {open ? (
                     <XMarkIcon className="block h-10 w-10" aria-hidden="true" />
@@ -66,7 +66,7 @@ const NavigationBar = () => {
                   <p>Insights</p>
                   <p
                     onClick={openModal}
-                    className="px-8 py-2 rounded-full hover:bg-yellow-600 duration-300 transition-all bg-white border-2 border-white text-blue-800 hover:text-white"
+                    className="px-8 py-2 rounded-full hover:bg-yellow-500 duration-300 transition-all bg-white border-2 border-white text-blue-800 hover:text-white"
                   >
                     Contact Us
                   </p>

@@ -14,7 +14,7 @@ const URL = `${import.meta.env.VITE_AIRTABLE_URL}${
   import.meta.env.VITE_AIRTABLE_BASE
 }/${import.meta.env.VITE_AIRTABLE_TABLE}`
 
-const postForm = async (data: NewContactData) => {
+const postForm = async (data: NewContactData): Promise<number> => {
   const body = {
     fields: data,
   }
@@ -28,9 +28,9 @@ const postForm = async (data: NewContactData) => {
   }
   try {
     const response = await fetch(URL, requestOptions)
-    return response
+    return response.status
   } catch (error) {
-    console.log(error)
+    return 404
   }
 }
 
