@@ -18,7 +18,7 @@ const Contact = () => {
       </p>
       <div className="text-right">
         <button
-          className="btn-secondary px-10 rounded-full hover:bg-yellow-600 duration-300 transition-all hover:shadow-lg text-xl"
+          className="btn-secondary px-10 rounded-full hover:bg-yellow-500 duration-300 transition-all hover:shadow-lg text-xl"
           onClick={openModal}
         >
           Contact Us
@@ -48,7 +48,7 @@ const Contact = () => {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all z-40">
                   <Dialog.Title className="text-3xl font-extrabold py-5 text-gray-900">
                     Contact Us
                   </Dialog.Title>

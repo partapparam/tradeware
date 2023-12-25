@@ -15,9 +15,8 @@ const Services = () => {
           Contractor Software Consulting
         </p>
         <div>
-          <p>Workflow Discovery</p>
-          <p>Change Management </p>
-          <p>Software Optimization</p>
+          <p>Software Platform Discovery and Guidance</p>
+          <p>Data and Attachments Management</p>
         </div>
       </div>
     </div>
