@@ -3,6 +3,7 @@ import { yupResolver } from "@hookform/resolvers/yup"
 import * as Yup from "yup"
 import postForm from "../formService"
 import { useState } from "react"
+import { LoadingSpinner } from "./loading"
 
 interface ContactFormProps {
   closeModal: () => void
@@ -49,6 +50,7 @@ export const ContactForm = ({ closeModal }: ContactFormProps) => {
   const onSubmit = async (data: ContactFormValues) => {
     // console.log(JSON.stringify(data, null, 2))
     try {
+      setIsLoading(true)
       const status: number = await postForm(data)
       if (status === 200) {
         alert("Thank you, we will be in touch shortly")
@@ -62,6 +64,7 @@ export const ContactForm = ({ closeModal }: ContactFormProps) => {
       }
     } finally {
       reset()
+      setIsLoading(false)
     }
   }
 
@@ -72,6 +75,7 @@ export const ContactForm = ({ closeModal }: ContactFormProps) => {
 
   return (
     <div>
+      {isLoading && <LoadingSpinner />}
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="text-black flex flex-col gap-y-4 z-50"
