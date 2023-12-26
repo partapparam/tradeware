@@ -7,16 +7,19 @@ const Services = () => {
         <div>
           <p>Discovery & Research</p>
           <p>Prototyping and Testing</p>
-          <p>Data Engineering</p>
+          <p>Data Transfer</p>
+          <p>Data Cleanup</p>
         </div>
       </div>
       <div className="p-10 h-72 border hover:bg-white hover:text-gray-800 border-white flex flex-col gap-y-6 duration-300 transition-all rounded justify-center">
         <p className="text-4xl hover:text-blue-700">
-          Contractor Software Consulting
+          Contractor Software Consultation
         </p>
         <div>
-          <p>Software Platform Discovery and Guidance</p>
-          <p>Data and Attachments Management</p>
+          <p>Workflow Discovery</p>
+          <p>Capacity Needs</p>
+          <p>CRM Details</p>
+          <p>Guided help in narrowing options</p>
         </div>
       </div>
     </div>
