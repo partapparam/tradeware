@@ -22,7 +22,7 @@ const NavigationBar = () => {
               <div className="flex flex-1 items-center sm:justify-between">
                 <div className="text-2xl sm:text-4xl  font-thin uppercase border-r-2 px-6 border-white">
                   <p>Tradeware</p>
-                  <p className="text-lg text-center">Solutions</p>
+                  <p className="text-lg text-center">Consulting</p>
                 </div>
                 <div className="md:flex px-4 items-center justify-around w-full font-serif hidden md:visible">
                   <p>Services</p>
