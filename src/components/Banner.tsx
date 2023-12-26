@@ -9,10 +9,8 @@ const Banner = () => {
       <div className="md:border-b-2 flex flex-col md:flex-row">
         <p className="text-xl sm:text-2xl p-10 md:basis-2/3">
           Trade expertise meets approachability. Tradeware Solution’s in-house
-          team of software specialists is the go-to for quality. And with a
-          client-focused approach and years in the trades, we’re more than just
-          your agency—we’re your partners. We know firsthand your software
-          investment is a big one, and we'd like to help.
+          team of software specialists is the go-to for quality. And with years
+          in the trades, we’re more than just your consultants your partners.
         </p>
         <button className="bg-yellow-500 font-serif text-2xl font-thin p-10   md:basis-1/3">
           About Us
